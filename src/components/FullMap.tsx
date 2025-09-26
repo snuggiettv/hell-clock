@@ -424,7 +424,7 @@ export default function FullMap(){
   const qs = React.useMemo(() => new URLSearchParams(window.location.search), []);
   const isPreview = qs.get('map') === '1' || qs.get('tab') === 'map';
   const editMode  = qs.get('edit') === '1' || (import.meta.env.DEV && qs.get('edit') === '1');
-  const testModeEnabled = isPreview || editMode;
+  const testModeEnabled = true;
 
   /* ---------- State ---------- */
   const [entries,setEntries]=React.useState<Entry[]>([]);
