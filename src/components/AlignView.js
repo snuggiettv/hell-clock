@@ -9,44 +9,47 @@ const AlignView = ({ groupId }) => {
     const [edges, setEdges] = useState([]);
     const [artProps, setArtProps] = useState(null);
     useEffect(() => {
-        // 1️⃣ Get the constellation group
-        const groupEntry = constellationsData.find((entry) => entry.id === groupId);
+        // 1) Get the constellation group (from details array)
+        const detailsArr = constellationsData?.constellationsDetails ?? [];
+        const groupEntry = detailsArr.find((entry) => String(entry?.definition?.id) === String(groupId));
         if (!groupEntry) {
             console.warn(`⚠️ Constellation group "${groupId}" not found`);
             return;
         }
-        // 2️⃣ Parse nodes/edges from group
-        const { nodes: parsedNodes, edges: parsedEdges } = parseGroupToGraph(groupEntry.group);
+        // 2) Parse nodes/edges from group — pass definition + details so sizing works
+        const { nodes: parsedNodes, edges: parsedEdges } = parseGroupToGraph({
+            id: String(groupEntry.definition?.id),
+            group: {
+                definition: groupEntry.definition, // contains nodes
+                constellationsDetails: [groupEntry], // contains width/height/position
+            },
+        });
         setNodes(parsedNodes);
         setEdges(parsedEdges);
-        // 3️⃣ Get last ConstellationDetails entry for container size
-        const detailsEntries = groupEntry.group.filter((entry) => entry.type === "ConstellationDetails");
-        if (detailsEntries.length === 0) {
-            console.warn(`⚠️ No ConstellationDetails found for ${groupId}`);
-            return;
-        }
-        const lastDetails = detailsEntries[detailsEntries.length - 1];
+        // 3) Use this ConstellationDetails entry for container size/position
+        const lastDetails = groupEntry;
         const { width, height, position } = lastDetails;
-        // 4️⃣ Pick art image — here using blurred as base
-        const artBase = groupEntry.artBase || `/constellations/${groupId}`;
+        // 4) Pick art image — blurred as base (respect GH Pages base path)
+        const base = import.meta.env.BASE_URL || "/";
+        const artBase = `${base}constellations/${String(groupId)}`;
         const imgSrc = `${artBase}/blur.png`;
-        // 5️⃣ Store art props
+        // 5) Store art props
         setArtProps({
             src: imgSrc,
             width,
             height,
             x: position[0],
-            y: position[1]
+            y: position[1],
         });
-        // 6️⃣ Offset all node positions so they are centered on art
+        // 6) Offset node positions so they’re centered on the art
         const cx = position[0] + width / 2;
         const cy = position[1] + height / 2;
         setNodes((prev) => prev.map((n) => ({
             ...n,
             position: {
                 x: n.position.x - cx,
-                y: n.position.y - cy
-            }
+                y: n.position.y - cy,
+            },
         })));
     }, [groupId]);
     return (_jsx("div", { style: { width: "100%", height: "100%" }, children: _jsx(ReactFlowProvider, { children: _jsxs(ReactFlow, { nodes: nodes, edges: edges, fitView: true, nodesDraggable: false, zoomOnScroll: true, zoomOnPinch: true, panOnDrag: true, children: [artProps && (_jsx("div", { style: {
@@ -56,11 +59,11 @@ const AlignView = ({ groupId }) => {
                             width: artProps.width,
                             height: artProps.height,
                             pointerEvents: "none",
-                            zIndex: -1
+                            zIndex: -1,
                         }, children: _jsx("img", { src: artProps.src, alt: "Constellation art", style: {
                                 width: "100%",
                                 height: "100%",
-                                objectFit: "contain"
+                                objectFit: "contain",
                             } }) })), _jsx(Background, {}), _jsx(Controls, {})] }) }) }));
 };
 export default AlignView;

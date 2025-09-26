@@ -1,7 +1,7 @@
 // --- computeConstellationLocks.ts 
 
 type RFNode = { id: string; data: any };
-type RFEdge = { source: string; target: string; data?: { pointsToUnlock?: number } };
+type RFEdge = { source: string; target: string; data?: { pointsToUnlock?: any } };
 
 export function computeConstellationLocks(nodes: RFNode[], edges: RFEdge[]) {
   // Build rank map from node.data.rank (defaults to 0)

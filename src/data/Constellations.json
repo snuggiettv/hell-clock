@@ -1,6 +1,5 @@
 {
-    "name": "ConstellationsConfig",
-    "type": "ConstellationsConfig",
+  "name": "ConstellationsConfig",
     "constellationsDetails": [
         {
             "type": "ConstellationDetails",

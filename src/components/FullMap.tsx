@@ -9,7 +9,7 @@ import MapStatSummary from './MapStatSummary';
 import { extractConstellationAffixes, ConstellationAffixRow } from '../utils/extractConstellationAffixes';
 import { aggregateTotals, AffixRow as AggRow } from '../utils/aggregateTotals';
 import { materializeAffixLine, fmtValueForPattern as fmtValueForPatternShared } from '../utils/materializeAffixLine';
-import { effectiveValue } from '../utils/calculateCumulativeValue';
+import { effectiveValue } from '../utils/calculateCumulativeValue'
 
 /* ---------- Types ---------- */
 type RGB = { Red: number; Green: number; Blue: number };
@@ -65,7 +65,6 @@ const OFFSETS_MARYS = {
 };
 
 const isMarysTitle = (t?: string) => /three\s*marys?|tres\s*marias/i.test(t ?? '');
-
 
 const GRAY_FILL = 'rgba(185,205,225,0.75)';
 const MAX_K = 4;
@@ -187,8 +186,6 @@ const isComplete = (slug: string) => {
   try { return localStorage.getItem(COMPLETE_KEY(slug)) === '1'; } catch { return false; }
 };
 
-
-
 const meets = (h: RGB, n?: Partial<RGB>) =>
   !n || (h.Red >= (n.Red||0) && h.Green >= (n.Green||0) && h.Blue >= (n.Blue||0));
 
@@ -274,11 +271,9 @@ function fmtValueForPattern(value: number | null | undefined, pattern: string): 
   return fmtValueForPatternShared(value, pattern);
 }
 
-
 function materializeLine(pattern: string, value?: number | null, valuePerLevel?: number | null) {
   return materializeAffixLine({ pattern, value, valuePerLevel });
 }
-
 
 // Keys look like "<definition.id>:<node.name or node.id>"
 function keyCandidates(g: any, n: any): string[] {
@@ -813,7 +808,6 @@ export default function FullMap(){
     return { title: 'Total Modifiers', rows };
   }, [entries, testModeEnabled, testActive, affixIndex]);
 
-
 /* ---------- Devotion totals (incl. Marys per-node) ---------- */
 const recomputeTotals = React.useCallback(() => {
   const totals: RGB = { Red: 0, Green: 0, Blue: 0 };
@@ -891,8 +885,6 @@ const recomputeTotals = React.useCallback(() => {
   } catch {}
 }, [entries, testActive, testModeEnabled, isComplete]);
 
-
-
   React.useEffect(() => {
     recomputeTotals();
   }, [testActive, testModeEnabled, recomputeTotals]);
@@ -901,7 +893,6 @@ const recomputeTotals = React.useCallback(() => {
   React.useEffect(() => {
     recomputeTotals();
   }, [entries, testModeEnabled, recomputeTotals]);
-
 
   React.useEffect(() => {
     const handler = (ev: any) => {
@@ -945,7 +936,7 @@ const viewport = (
   >
     <DevotionOverlay
       totals={devotion}
-      containerRef={contentRef}
+      containerRef={contentRef as unknown as React.RefObject<HTMLElement>}
       inset={LETTERBOX.HEADER_H + LETTERBOX.SIDE_PAD}
     />
     <div
@@ -1206,17 +1197,17 @@ const viewport = (
                           const hasFury  = affs.some((a: any) => {
                             const en = (a.description || []).find((loc: any) => loc.langCode === 'en');
                             const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                            return /\\bfury\\s+devotion\\b/.test(t);
+                            return /\bfury\s+devotion\b/.test(t);
                           });
                           const hasDisc  = affs.some((a: any) => {
                             const en = (a.description || []).find((loc: any) => loc.langCode === 'en');
                             const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                            return /\\bdiscipline\\s+devotion\\b/.test(t);
+                            return /\bdiscipline\s+devotion\b/.test(t);
                           });
                           const hasFaith = affs.some((a: any) => {
                             const en = (a.description || []).find((loc: any) => loc.langCode === 'en');
                             const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                            return /\\bfaith\\s+devotion\\b/.test(t);
+                            return /\bfaith\s+devotion\b/.test(t);
                           });
                           if (hasFury)  effectLines.push('+1 Fury');
                           if (hasDisc)  effectLines.push('+1 Discipline');
@@ -1224,7 +1215,7 @@ const viewport = (
                         }
                       }
 
-                                            // ✅ Build raw, verbatim lines from the original definition node for THIS node
+                      // ✅ Build raw, verbatim lines from the original definition node for THIS node
                       const defNodes: any[] = g.group?.definition?.nodes || [];
 
                       // Multi-key map for robust lookup: id, name, English localized name, and slug(English name)
@@ -1270,7 +1261,7 @@ const viewport = (
                         return !affixOverrides || affixOverrides[norm] !== '__HIDE__';
                       });
 
-const iconUrl = iconUrlForUrl(affixes);
+                      const iconUrl = iconUrlForUrl(affixes);
 
                       const reqTotals = need
                         ? {
@@ -1402,46 +1393,33 @@ if (!isPreview) {
         }}
       />
      {/* Tooltip */}
-        <MapNodeTooltip
-          data={tip}
-          panelWidth={484}
-          panelHeight={519}
-          render={(d) => {
-            const isMarys = isMarysTitle(d.title);
-            const offsets = isMarys ? OFFSETS_MARYS : OFFSETS_DEFAULT;
-            const reqMet = d.state !== 'Locked';
+      <MapNodeTooltip
+        data={tip}
+        panelWidth={484}
+        panelHeight={519}
+        render={(d) => {
+          const isMarys = isMarysTitle(d.title);
+          const reqMet = d.state !== 'Locked';
+          const rawLines: string[] = Array.isArray((d as any)?.rawLines) ? (d as any).rawLines : [];
 
-            // ✅ Prefer raw lines passed on the tip (verbatim JSON), fallback to old effectLines
-            const rawLines: string[] = Array.isArray((d as any)?.rawLines) ? (d as any).rawLines : [];
-
-            return (
-              <MapTooltipPanel
-                title={String(d.title ?? '')}
-                subtitle={d.subtitle}
-                countText={d.countText}
-
-                effectLines={rawLines.length ? rawLines : d.effectLines}
-
-                iconUrl={d.iconUrl}
-                effectValues={d.effectValues}
-                reqTotals={d.reqTotals}
-                reqMet={reqMet}
-                reqInlineInBody
-                reqLabel="Unlocks at"
-                bonusTotals={d.bonusTotals}
-                showBonus={d.showBonus}
-                usePlainBonusRow={isMarys}
-                bonusBannerUrl={undefined}
-                bonusBannerHeight={isMarys ? 56 : 80}
-                bonusBannerOffsetY={55}
-                completionBottom={-8}
-                panelOffsetY={4}
-                offsets={offsets}
-              />
-            );
-          }}
-        />
-
+          return (
+            <MapTooltipPanel
+              title={String(d.title ?? '')}
+              subtitle={d.subtitle}
+              countText={d.countText}
+              effectLines={rawLines.length ? rawLines : d.effectLines}
+              iconUrl={d.iconUrl}
+              effectValues={d.effectValues}
+              reqTotals={d.reqTotals}
+              reqMet={reqMet}
+              reqLabel="Unlocks at"
+              bonusTotals={d.bonusTotals}
+              showBonus={d.showBonus}
+              isThreeMarys={isMarys}
+            />
+          );
+        }}
+      />
     </div>
   );
 }
@@ -1531,26 +1509,13 @@ return (
             countText={d.countText}
             effectLines={rawLines.length ? rawLines : d.effectLines}
             iconUrl={d.iconUrl}
-            
             effectValues={d.effectValues}
-            // inline requirements inside the body (no separate row)
             reqTotals={d.reqTotals}
             reqMet={reqMet}
-            reqInlineInBody={true}
             reqLabel="Unlocks at"
-
-            // independent completion section
             bonusTotals={d.bonusTotals}
             showBonus={d.showBonus}
-            usePlainBonusRow={isMarys}
-            bonusBannerUrl={undefined}// or keep your current banner
-            bonusBannerHeight={isMarys ? 56 : 80}
-            bonusBannerOffsetY={55}
-            completionBottom={-8} // <-- move this to seat the chips independently
-
-            // panel layout
-            panelOffsetY={4}
-            offsets={offsets}
+            isThreeMarys={isMarys}
           />
         );
       }}

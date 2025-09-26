@@ -1129,17 +1129,17 @@ export default function FullMap() {
                                                     const hasFury = affs.some((a) => {
                                                         const en = (a.description || []).find((loc) => loc.langCode === 'en');
                                                         const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                                                        return /\\bfury\\s+devotion\\b/.test(t);
+                                                        return /\bfury\s+devotion\b/.test(t);
                                                     });
                                                     const hasDisc = affs.some((a) => {
                                                         const en = (a.description || []).find((loc) => loc.langCode === 'en');
                                                         const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                                                        return /\\bdiscipline\\s+devotion\\b/.test(t);
+                                                        return /\bdiscipline\s+devotion\b/.test(t);
                                                     });
                                                     const hasFaith = affs.some((a) => {
                                                         const en = (a.description || []).find((loc) => loc.langCode === 'en');
                                                         const t = String(en?.langTranslation || a?.eStatDefinition || a?.type || '').toLowerCase();
-                                                        return /\\bfaith\\s+devotion\\b/.test(t);
+                                                        return /\bfaith\s+devotion\b/.test(t);
                                                     });
                                                     if (hasFury)
                                                         effectLines.push('+1 Fury');
@@ -1276,11 +1276,9 @@ export default function FullMap() {
                         pointerEvents: 'none',
                     } }), _jsx(MapNodeTooltip, { data: tip, panelWidth: 484, panelHeight: 519, render: (d) => {
                         const isMarys = isMarysTitle(d.title);
-                        const offsets = isMarys ? OFFSETS_MARYS : OFFSETS_DEFAULT;
                         const reqMet = d.state !== 'Locked';
-                        // ✅ Prefer raw lines passed on the tip (verbatim JSON), fallback to old effectLines
                         const rawLines = Array.isArray(d?.rawLines) ? d.rawLines : [];
-                        return (_jsx(MapTooltipPanel, { title: String(d.title ?? ''), subtitle: d.subtitle, countText: d.countText, effectLines: rawLines.length ? rawLines : d.effectLines, iconUrl: d.iconUrl, effectValues: d.effectValues, reqTotals: d.reqTotals, reqMet: reqMet, reqInlineInBody: true, reqLabel: "Unlocks at", bonusTotals: d.bonusTotals, showBonus: d.showBonus, usePlainBonusRow: isMarys, bonusBannerUrl: undefined, bonusBannerHeight: isMarys ? 56 : 80, bonusBannerOffsetY: 55, completionBottom: -8, panelOffsetY: 4, offsets: offsets }));
+                        return (_jsx(MapTooltipPanel, { title: String(d.title ?? ''), subtitle: d.subtitle, countText: d.countText, effectLines: rawLines.length ? rawLines : d.effectLines, iconUrl: d.iconUrl, effectValues: d.effectValues, reqTotals: d.reqTotals, reqMet: reqMet, reqLabel: "Unlocks at", bonusTotals: d.bonusTotals, showBonus: d.showBonus, isThreeMarys: isMarys }));
                     } })] }));
     }
     return (_jsxs("div", { id: "letterbox-root", style: { position: 'fixed', inset: 0, overflow: 'hidden', background: '#060a12' }, children: [_jsx("div", { "aria-hidden": true, style: {
@@ -1323,12 +1321,6 @@ export default function FullMap() {
                     const reqMet = d.state !== 'Locked';
                     // ✅ Prefer raw lines passed on the tip (verbatim JSON), fallback to old effectLines
                     const rawLines = Array.isArray(d?.rawLines) ? d.rawLines : [];
-                    return (_jsx(MapTooltipPanel, { title: String(d.title ?? ''), subtitle: d.subtitle, countText: d.countText, effectLines: rawLines.length ? rawLines : d.effectLines, iconUrl: d.iconUrl, effectValues: d.effectValues, 
-                        // inline requirements inside the body (no separate row)
-                        reqTotals: d.reqTotals, reqMet: reqMet, reqInlineInBody: true, reqLabel: "Unlocks at", 
-                        // independent completion section
-                        bonusTotals: d.bonusTotals, showBonus: d.showBonus, usePlainBonusRow: isMarys, bonusBannerUrl: undefined, bonusBannerHeight: isMarys ? 56 : 80, bonusBannerOffsetY: 55, completionBottom: -8, 
-                        // panel layout
-                        panelOffsetY: 4, offsets: offsets }));
+                    return (_jsx(MapTooltipPanel, { title: String(d.title ?? ''), subtitle: d.subtitle, countText: d.countText, effectLines: rawLines.length ? rawLines : d.effectLines, iconUrl: d.iconUrl, effectValues: d.effectValues, reqTotals: d.reqTotals, reqMet: reqMet, reqLabel: "Unlocks at", bonusTotals: d.bonusTotals, showBonus: d.showBonus, isThreeMarys: isMarys }));
                 } })] }));
 }
