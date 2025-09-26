@@ -422,8 +422,8 @@ const RIGHT_SAFE = PANEL_W + PANEL_MARGIN + 16; // reserved gutter width for pan
 export default function FullMap(){
   /* ---------- URL flags ---------- */
   const qs = React.useMemo(() => new URLSearchParams(window.location.search), []);
-  const isPreview = qs.get('map') === '1';
-  const editMode  = qs.get('edit') === '1' || (import.meta.env.DEV && qs.get('edit') !== '0');
+  const isPreview = qs.get('map') === '1' || qs.get('tab') === 'map';
+  const editMode  = qs.get('edit') === '1' || (import.meta.env.DEV && qs.get('edit') === '1');
   const testModeEnabled = isPreview || editMode;
 
   /* ---------- State ---------- */
