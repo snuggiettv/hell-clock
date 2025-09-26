@@ -1,5 +1,5 @@
 // src/utils/totalsFromConstellations.ts
-import type { ConstellationsConfig } from "../utils/analyzeConstellations";
+import type { ConstellationsConfig } from "../utils/loadConstellations";
 import { extractConstellationAffixes } from "../utils/extractConstellationAffixes";
 
 export function totalsFromConstellations(raw: ConstellationsConfig, activeNodeIds: Set<string>) {
