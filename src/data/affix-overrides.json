@@ -1,0 +1,78 @@
+{
+  "Unlock the Discipline path": "__HIDE__",
+  "Unlock the Fury path": "__HIDE__",
+  "Unlock the Faith path": "__HIDE__",
+  "DisciplineDevotion": "__HIDE__",
+  "FuryDevotion": "__HIDE__",
+  "FaithDevotion": "__HIDE__",
+  "Discipline Devotion +#": "__HIDE__",
+  "Fury Devotion +#": "__HIDE__",
+  "Faith Devotion +#": "__HIDE__",
+  "Increases Attack Speed by #%": "Attack Speed +#%",
+  "Critical Chance +#%[+]": "Critical Chance +#%[+]",
+  "Evasion +#%[+]": "Evasion +#%[+]",
+  "Move Speed +#%[+]": "Move Speed +#%[+]",
+  
+  "+#%[x] Damage per Agility Orb and +#%[x] Mana Cost for Marksman Skills": [
+    "__SECTION__:Agility Orb|+#%[x] Damage per Agility Orb",
+    "__SECTION__:Skills|+#%[x] Mana Cost for Marksman Skills"
+  ],
+  
+  "Killing an enemy has #% chance of granting an Agility Orb. Dealing damage to an Elite enemy has #% chance of granting an Agility Orb. You can have up to # Agility Orbs active. Each Agility orb gives you +#%[+] Move Speed and Attack Speed. Taking damage removes one Agility Orb.": [
+    "__SECTION__:Agility Orb|Chance to Spawn:",
+    "__SECTION__:Agility Orb|• On Kill: #%",
+    "__SECTION__:Agility Orb|• On Elite: #%",
+    "__SECTION__:Agility Orb|Max Agility Orbs: #3i",
+    "__SECTION__:Agility Orb|Each Orb:",
+    "__SECTION__:Agility Orb|• +#4%[+] Move Speed",
+    "__SECTION__:Agility Orb|• +#4%[+] Attack Speed",
+    "__SECTION__:Agility Orb|Taking damage removes 1 Agility Orb."
+   ],
+  
+   "Grants +#% Critical Damage per Agility Orb.":
+    "__SECTION__:Agility Orb|Grants +#% Critical Damage per Agility Orb",
+  
+  "Orbs deal additional Lightning damage equal to #% of your current Mana.": 
+    "__SECTION__:Power Orb|Each Orb: Lightning Damage = #% of current Mana.",
+    
+  "Your Power Orbs regenerate +#% Mana.":
+    "__SECTION__:Power Orb|Power Orbs regnerate +#% Mana.",  
+  
+  "Spending # Mana grants you a Power Orb (max #). Increase your Mana Regen by #% for each active Orb. Lose an orb every #s that you don't spend at least # Mana. Orbs will orbit around you and deal #% Lightning damage to enemies who touch them": [
+    "__SECTION__:Power Orb|Spending # Mana grants you a Power Orb (max #).",
+    "__SECTION__:Power Orb|Mana Regen +#% for each active Orb.",
+    "__SECTION__:Power Orb|Lose an orb every #s that you don't spend at least # Mana.",
+    "__SECTION__:Power Orb|Orbs will orbit around you and deal #% Lightning damage to enemies who touch them."
+  ],
+
+  "Unlocks , a passive skill that protects you upon death (Cooldown: #s)": 
+    "__SECTION__:Skills|Unlocks , a passive skill that protects you upon death (Cooldown: #s)",
+
+  "Unlocks the skill \"\"": "__SECTION__:Skills|Unlocks the skill \"\"",
+  
+  "Your Power Orbs regenerate #% Mana.": "__SECTION__:Power Orb|Mana Regen +#% for each active Orb.",
+
+  "Taking damage grants you a stack of Vigor (max # stacks). Each Vigor stack grants #% damage reduction. Lose # Vigor stack every # seconds you don't take damage.": [
+    "Taking damage grants you a stack of Vigor (max #1i stacks).",
+    "Each Vigor stack grants #2% damage reduction.",
+    "Lose #3i Vigor stack every #4i seconds you don't take damage."
+  ],
+
+  "Depleting your Mana spends all of your Vigor stacks and grants you a buff that provides #% attack/cast speed and reduces all Mana costs to zero. This buff lasts #s for each Vigor stack spent": "Ogum / Child of Ogum:\n• Depleting your Mana spends all of your Vigor stacks and grants you a buff that provides #% attack/cast speed and reduces all Mana costs to zero. This buff lasts #s for each Vigor stack spent",
+  "# Max Agility Orbs": "Yorixiamori / Beautiful Melody:\n• # Max Agility Orbs",
+  "#%[x] Chance to Gain Agility Orb": "Yorixiamori / Chant of Hope:\n• #%[x] Chance to Gain Agility Orb",
+  "#% Move Speed per Agility Orb": "Yorixiamori / Chant of Speed:\n• #% Move Speed per Agility Orb",
+  "#% Critical Damage for Marksman Skills": "Oxóssi / Hunter's Sagacity:\n• #% Critical Damage for Marksman Skills",
+  "#%[+] Skill Speed for Marksman Skills": "Oxóssi / Hunter's Speed:\n• #%[+] Skill Speed for Marksman Skills",
+  "#%[x] Damage per Agility Orb and #%[x] Mana Cost for Marksman Skills": "Oxóssi / Hunter's Bounty:\n• #%[x] Damage per Agility Orb and #%[x] Mana Cost for Marksman Skills",
+  "Your Marksman Skills deal #%[x] damage against enemies not Close to you": "Oxóssi / One-Arrow Hunter:\n• Your Marksman Skills deal #%[x] damage against enemies not Close to you",
+  "Split Shot fires # additional projectile for each Agility Orb": "Oxóssi / Arrows of Oxóssi:\n• Split Shot fires # additional projectile for each Agility Orb",
+  "Repeater fires # additional projectile for each # Agility Orb": "Oxóssi / Arrows of Oxóssi:\n• Repeater fires # additional projectile for each # Agility Orb",
+  "Marksman Skills deals #%[x] damage": "Oxóssi / Arrows of Oxóssi:\n• Marksman Skills deals #%[x] damage",
+  "For each Close enemy, gain #% Damage Reduction, up to #%": "Jurupari the Judge / Son of the Sun:\n• For each Close enemy, gain #% Damage Reduction, up to #%",
+  "When you apply Ignite, gain a stack of Dawnlight (max # stacks).\n\nGain #%[x] Fire Damage for each Dawnlight stack": "Guaraci / Dawnlight:\n• When you apply Ignite, gain a stack of Dawnlight (max # stacks).\n\nGain #%[x] Fire Damage for each Dawnlight stack",
+  "Casting Lasso spends all Dawnlight stacks. Each enemy takes #% of your Base Damage, multiplied by the Dawnlight stacks, as Fire Damage.": "Guaraci / The Sun:\n• Casting Lasso spends all Dawnlight stacks. Each enemy takes #% of your Base Damage, multiplied by the Dawnlight stacks, as Fire Damage.",
+  "Blighted Enemies have #% chance to Miss their Physical Attacks": "Anhangá / Nature's Guardian:\n• Blighted Enemies have #% chance to Miss their Physical Attacks",
+  "#%[x] Reduced Reroll Costs": "Oxum / Oxum's Piety:\n• #%[x] Reduced Reroll Costs",
+  "Deal #%[x] Damage for # seconds after you pick up Gold": "Oxum / Oxum's Gold:\n• Deal #%[x] Damage for # seconds after you pick up Gold"
+}

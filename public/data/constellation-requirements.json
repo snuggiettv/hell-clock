@@ -1,0 +1,419 @@
+
+{
+  "1": {
+    "name": "Tres Marias - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "2": {
+    "name": "Santo Expedito - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 1,
+      "Blue": 0
+    }
+  },
+  "3": {
+    "name": "Tupa - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 1
+    }
+  },
+  "4": {
+    "name": "Ogum - Constellation Definition",
+    "requirements": {
+      "Red": 1,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "19": {
+    "name": "Yorixiamori - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 5,
+      "Blue": 0
+    }
+  },
+  "20": {
+    "name": "Oxossi - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 4,
+      "Blue": 0
+    }
+  },
+  "21": {
+    "name": "Jurupari - Constellation Definition",
+    "requirements": {
+      "Red": 2,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "23": {
+    "name": "Guaraci - Constellation Definition",
+    "requirements": {
+      "Red": 3,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "27": {
+    "name": "Anhanga - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 3,
+      "Blue": 0
+    }
+  },
+  "24": {
+    "name": "Oxum - Constellation Definition",
+    "requirements": {
+      "Red": 2,
+      "Green": 2,
+      "Blue": 0
+    }
+  },
+  "25": {
+    "name": "Caupe - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 2,
+      "Blue": 0
+    }
+  },
+  "26": {
+    "name": "Oxumare - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 3,
+      "Blue": 3
+    }
+  },
+  "37": {
+    "name": "WIP_Sao Joao - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "54": {
+    "name": "WIP_Ossain - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "59": {
+    "name": "WIP_Onile - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "64": {
+    "name": "WIP_Logun Ede - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "38": {
+    "name": "WIP_Sao Pedro - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "36": {
+    "name": "Sao Jorge - Constellation Definition",
+    "requirements": {
+      "Red": 4,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "52": {
+    "name": "WIP_Curupira - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "44": {
+    "name": "WIP_Exu Caveira - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "58": {
+    "name": "WIP_Nossa Sra de Aparecida - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "45": {
+    "name": "WIP_Orunmila",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "30": {
+    "name": "Akuanduba - Constellation Definition",
+    "requirements": {
+      "Red": 2,
+      "Green": 0,
+      "Blue": 2
+    }
+  },
+  "48": {
+    "name": "WIP_Boitata - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "50": {
+    "name": "WIP_Caipora - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "66": {
+    "name": "WIP_Ceuci Star Mother - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 99
+    }
+  },
+  "49": {
+    "name": "WIP_Exu - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "41": {
+    "name": "WIP_Iansa - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "34": {
+    "name": "Jaci - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 2
+    }
+  },
+  "31": {
+    "name": "Iemanja - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 3
+    }
+  },
+  "35": {
+    "name": "Santa Edwiges - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 3
+    }
+  },
+  "67": {
+    "name": "WIP_Iroko - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "68": {
+    "name": "WIP_Jurupari Demon - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "70": {
+    "name": "WIP_Nana - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "63": {
+    "name": "WIP_Nossa Sra de Fatima - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 99,
+      "Blue": 99
+    }
+  },
+  "42": {
+    "name": "WIP_Nossa Sra Do Carmo - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "40": {
+    "name": "WIP_Oba - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "55": {
+    "name": "Omolu - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 3,
+      "Blue": 3
+    }
+  },
+  "69": {
+    "name": "WIP_Santa Ana - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "51": {
+    "name": "Santa Rita - Constellation Definition",
+    "requirements": {
+      "Red": 6,
+      "Green": 6,
+      "Blue": 0
+    }
+  },
+  "33": {
+    "name": "Sao Longuinho - Constellation Definition",
+    "requirements": {
+      "Red": 3,
+      "Green": 3,
+      "Blue": 3
+    }
+  },
+  "32": {
+    "name": "Oxala - Constellation Definition",
+    "requirements": {
+      "Red": 2,
+      "Green": 2,
+      "Blue": 2
+    }
+  },
+  "53": {
+    "name": "Santo Antonio - Constellation Definition",
+    "requirements": {
+      "Red": 4,
+      "Green": 0,
+      "Blue": 4
+    }
+  },
+  "65": {
+    "name": "Sao Cosme Damiao - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 6,
+      "Blue": 6
+    }
+  },
+  "39": {
+    "name": "WIP_Sao Jose - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "57": {
+    "name": "WIP_Sao Judas Tadeu - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "61": {
+    "name": "WIP_Sao Paulo - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 99,
+      "Blue": 99
+    }
+  },
+  "43": {
+    "name": "WIP_Sao Sebastiao - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "60": {
+    "name": "WIP_Sume - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 0
+    }
+  },
+  "47": {
+    "name": "WIP_Xango - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 0,
+      "Blue": 99
+    }
+  },
+  "62": {
+    "name": "WIP_Yaci Yatere - Constellation Definition",
+    "requirements": {
+      "Red": 99,
+      "Green": 99,
+      "Blue": 0
+    }
+  },
+  "46": {
+    "name": "WIP_Yeba Belo - Constellation Definition",
+    "requirements": {
+      "Red": 0,
+      "Green": 99,
+      "Blue": 99
+    }
+  }
+}

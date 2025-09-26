@@ -1,0 +1,289 @@
+
+{
+  "_meta": {
+    "version": "1.0",
+    "note": "Single config for constellation aliases, background images, and placement. Edit here only.",
+    "howToUse": [
+      "Each key in 'groups' is the CANONICAL group id your app should use (lowercase, kebab-case).",
+      "aliases: strings that may appear in payloads; they map to this canonical key.",
+      "images.blur / images.line: paths under your site base (empty string means none).",
+      "placement: x/y translate and overall scale applied to both backgrounds and star nodes."
+    ]
+  },
+  "defaults": {
+    "backgroundSize": { "width": 1200, "height": 800 },
+    "placement": { "x": 0, "y": 0, "scale": 1 }
+  },
+  "groups": {
+    "akuanduba": {
+      "aliases": ["akuanduba-", "akuanduba-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -152, "y": -164, "scale": 0.2 }
+    },
+    "anhanga": {
+      "aliases": ["anhanga-", "anhanga-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -220, "y": -237, "scale": 0.275 }
+    },
+    "boitata": {
+      "aliases": ["boitata-", "boitata-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 319, "y": -15, "scale": 0.3 }
+    },
+    "caipora": {
+      "aliases": ["caipora-", "caipora-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 253, "y": -55, "scale": 0.4 }
+    },
+    "caupe": {
+      "aliases": ["caupe-", "caupe-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -224, "y": -236, "scale": 0.27 }
+    },
+    "ceuci-star-mother": {
+      "aliases": ["ceucistarmother-", "ceuci-star-mother-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "cosmas-and-damian": {
+      "aliases": ["saocosmedamiao-", "sao-cosme-damiao"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 280, "y": -90, "scale": 0.34 }
+    },
+    "curupira": {
+      "aliases": ["curupira-", "curupira-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "exu": {
+      "aliases": ["exu-", "exu-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 379, "y": -21, "scale": 0.358 }
+    },
+    "exu-caveira": {
+      "aliases": ["exucaveira-", "exu-caveira-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -223, "y": -236, "scale": 0.278 }
+    },
+    "expeditus": {
+      "aliases": ["santo-expedito", "santoexpedito-", "santo-expedito-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -223, "y": -236, "scale": 0.278 }
+    },
+    "guaraci": {
+      "aliases": ["guaraci-", "guaraci-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -223, "y": -236, "scale": 0.278 }
+    },
+    "iansa": {
+      "aliases": ["iansa-", "iansa-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "iemanja": {
+      "aliases": ["iemanja-", "iemanja-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -308, "y": -180, "scale": 0.21 }
+    },
+    "iroko": {
+      "aliases": ["iroko-", "iroko-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "jaci": {
+      "aliases": ["jaci-", "jaci-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -222, "y": -235, "scale": 0.275 }
+    },
+    "jurupari": {
+      "aliases": ["jurupari-", "jurupari-constellation-definition", "jurupari-the-judge"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -248, "y": -258, "scale": 0.3 }
+    },
+    "juruparidemon": {
+      "aliases": ["juruparidemon-", "jurupari-the-demon", "jurupari-demon-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "logun-ede": {
+      "aliases": ["logunede-", "logun-ede-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "nana": {
+      "aliases": ["nana-", "nana-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 165, "y": 130, "scale": 0.26 }
+    },
+    "nossa-sra-de-aparecida": {
+      "aliases": ["nossasradeaparecida-", "nossa-sra-de-aparecida-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "our-lady-of-fatima": {
+      "aliases": ["nossa-sra-de-fatima", "nossasradefatima-", "nossa-sra-de-fatima-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "nossa-sra-do-carmo": {
+      "aliases": ["nossasradocarmo-", "nossa-sra-do-carmo-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "oba": {
+      "aliases": ["oba-", "oba-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "ogum": {
+      "aliases": ["ogum-", "ogum-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -106, "y": -216, "scale": 0.35 }
+    },
+    "omolu": {
+      "aliases": ["omolu-", "omolu-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 174, "y": -123, "scale": 0.354 }
+    },
+    "onile": {
+      "aliases": ["onile-", "onile-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "orunmila": {
+      "aliases": ["orunmila", "orunmila-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "ossain": {
+      "aliases": ["ossain-", "ossain-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "oxala": {
+      "aliases": ["oxala-", "oxala-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -164, "y": -175, "scale": 0.21 }
+    },
+    "oxossi": {
+      "aliases": ["oxossi-", "oxossi-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -229, "y": -240, "scale": 0.284 }
+    },
+    "oxum": {
+      "aliases": ["oxum-", "oxum-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -229, "y": -240, "scale": 0.284 }
+    },
+    "oxumare": {
+      "aliases": ["oxumare-", "oxumare-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -229, "y": -240, "scale": 0.284 }
+    },
+    "santa-ana": {
+      "aliases": ["santaana-", "santa-ana-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "st-hedwig": {
+      "aliases": ["santa-edwiges", "santaedwiges-", "santa-edwiges-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -210, "y": -218, "scale": 0.26 }
+    },
+    "rita-of-cascia": {
+      "aliases": ["santarita-", "santa-rita-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 265, "y": 25, "scale": 0.3 }
+    },
+    "anthony-of-padua": {
+      "aliases": ["santo-antonio", "santoantonio-", "santo-antonio-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "santoexpedito": {
+      "aliases": ["santoexpedito-"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -223, "y": -236, "scale": 0.278 }
+    },
+    "sao-longuinho": {
+      "aliases": ["saolonguinho-", "sao-longuinho-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -164, "y": -175, "scale": 0.21 }
+    },
+    "st-john": {
+      "aliases": ["sao-joao", "saojoao-", "sao-joao-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 386, "y": 115, "scale": 0.25 }
+    },
+    "st-george": {
+      "aliases": ["sao-jorge", "saojorge-", "sao-jorge-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -218, "y": 235, "scale": 0.3 }
+    },
+    "st-paul": {
+      "aliases": ["sao-paulo", "saopaulo-", "sao-paulo-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 213, "y": -68, "scale": 0.28 }
+    },
+    "sao-jose": {
+      "aliases": ["saojose-", "sao-jose-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "sao-judas-tadeu": {
+      "aliases": ["saojudastadeu-", "sao-judas-tadeu-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "sao-pedro": {
+      "aliases": ["saopedro-", "sao-pedro-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "sao-sebastiao": {
+      "aliases": ["saosebastiao-", "sao-sebastiao-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "st-george-alt": {
+      "aliases": ["saojorge-"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -218, "y": 235, "scale": 0.3 }
+    },
+    "sume": {
+      "aliases": ["sume-", "sume-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "the-three-marys": {
+      "aliases": ["tres-marias", "tresmarias-", "tres-marias-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -151, "y": -193, "scale": 0.3 }
+    },
+    "tupa": {
+      "aliases": ["tupa-", "tupa-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -245, "y": -250, "scale": 0.3 }
+    },
+    "xango": {
+      "aliases": ["xango-", "xango-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 0, "y": 0, "scale": 1 }
+    },
+    "yaci-yatere": {
+      "aliases": ["yaciyatere-", "yaci-yatere-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 255, "y": 105, "scale": 0.3 }
+    },
+    "yeba-belo": {
+      "aliases": ["yebabelo-", "yeba-belo-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": 330, "y": -55, "scale": 0.3 }
+    },
+    "yorixiamori": {
+      "aliases": ["yorixiamori-", "yorixiamori-constellation-definition"],
+      "images": { "blur": "", "line": "" },
+      "placement": { "x": -226, "y": -235, "scale": 0.28 }
+    }
+  }
+}

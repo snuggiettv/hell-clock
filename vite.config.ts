@@ -1,8 +1,9 @@
-// vite.config.ts
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
+// Vite config for snuggiettv/hell-clock (GH Pages base path)
 export default defineConfig({
-  base: '/hell-clock/',
   plugins: [react()],
-});
+  base: '/hell-clock/',
+  build: { sourcemap: true },
+})

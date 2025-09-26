@@ -3,6 +3,7 @@ import ReactFlow, {
   ReactFlowProvider,
   useNodesState,
   useEdgesState,
+  useReactFlow,
   type EdgeProps
 } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -13,7 +14,12 @@ import TooltipCard from './components/TooltipCard';
 import StatSummary from './components/StatSummary';
 import useTagFilter from './utils/useTagFilter';
 import TreeSelector from './components/TreeSelector';
+import AutoCenter from './components/AutoCenter';
 import { formatStatName } from './utils/formatStatName';
+import DebugConstellationAudit from './components/DebugConstellationAudit';
+
+
+<DebugConstellationAudit />
 
 function DiamondEdge({ sourceX, sourceY, targetX, targetY, data }: EdgeProps) {
   const required = parseInt(data?.requiredRank || '0', 10);
@@ -64,15 +70,19 @@ function DiamondEdge({ sourceX, sourceY, targetX, targetY, data }: EdgeProps) {
 export const nodeTypes = { skill: SkillNode };
 export const edgeTypes = { diamond: DiamondEdge };
 
-export default function App() {
+type AppProps = { initialUrl?: string; hideTreeSelector?: boolean };
+export default function App({ initialUrl, hideTreeSelector = false }: AppProps) {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
   const [tooltip, setTooltip] = useState<any | null>(null);
   const { selectedTag, setSelectedTag, tagOptions, setTagOptions } = useTagFilter();
   const [treeUrl, setTreeUrl] = useState(
-    'https://raw.githubusercontent.com/snuggiettv/hellclock-data-export/refs/heads/main/data/Infernal%20Bell.json'
+    initialUrl ?? 'https://raw.githubusercontent.com/snuggiettv/hellclock-data-export/refs/heads/main/data/Infernal%20Bell.json'
   );
+  const [totalRanks, setTotalRanks] = useState(0);
+  const [showSummary, setShowSummary] = useState(true);
 
+  
   useEffect(() => {
     setNodes([]);
     setEdges([]);
@@ -160,10 +170,12 @@ export default function App() {
 
         ['Cooldown', 'Resistance', 'Reliquary', 'Second Wind', 'Red Portal'].forEach(tag => uniqueTags.add(tag));
         setTagOptions([...uniqueTags].sort());
-
+        console.log('✅ Parsed Nodes:', parsedNodes);
+        console.log('✅ Parsed Edges:', parsedEdges);
         setNodes(parsedNodes);
         setEdges(parsedEdges);
       });
+
   }, [treeUrl]);
 
   const updateLocks = (updatedNodes: any) => {
@@ -183,24 +195,87 @@ export default function App() {
     });
   };
 
-  const statTotals = useMemo(() => {
-    const totals: Record<string, number> = {};
-    nodes.forEach((node) => {
-      const { rank, affixes } = node.data;
-      if (rank === 0 || !affixes) return;
 
-      affixes.forEach((affix: any) => {
-        const statKey = affix.eStatDefinition || affix.eCharacterIncrement || 'Unknown';
-        const base = Number(affix.value ?? 0);
-        const perLevel = Number(affix.valuePerLevel ?? 0);
-        const modifier = affix.isNegative ? -1 : 1;
-        const perRankValue = base + perLevel * (rank - 1);
-        const cumulative = perRankValue * rank * modifier;
-        totals[statKey] = (totals[statKey] || 0) + cumulative;
-      });
-    });
-    return totals;
-  }, [nodes]);
+
+const statTotals = useMemo(() => {
+  type TotEntry = {
+    value: number;
+    isNegative: boolean;
+    isPercent?: boolean;
+    modifierType?: 'Additive' | 'Multiplicative';
+    nodeData?: Array<{ nodeId: string; rank: number; contribution: number }>;
+  };
+  const totals: Record<string, TotEntry> = {};
+
+  const total = nodes.reduce((sum: number, n: any) => sum + Number(n?.data?.rank ?? 0), 0);
+  setTotalRanks(total);
+
+  for (const node of nodes as any[]) {
+    const rank = Number(node?.data?.rank ?? 0);
+    if (rank <= 0) continue;
+    const affixes = Array.isArray(node?.data?.affixes) ? node.data.affixes : [];
+
+    for (const affix of affixes) {
+      const statKey = affix.eStatDefinition || affix.eCharacterIncrement || 'Unknown';
+      const base = Number(affix.value ?? 0);
+      const per  = Number(affix.valuePerLevel ?? 0);
+      const desc = String(affix?.description || '');
+      const rawType = String(affix?.statModifierType || '');
+      const isMultiplicative = /multiplicative/i.test(rawType);
+      // Robust percent detection
+      const magnitudeLooksPercent = Math.abs(base) <= 1 && Math.abs(per) <= 1;
+      const isPercentish = !!affix?.isPercent || /percent/i.test(rawType) || /%/.test(desc) || isMultiplicative || magnitudeLooksPercent;
+      const isNeg = !!affix?.isNegative;
+
+      const signedBase = isNeg ? -base : base;
+      const signedPer  = isNeg ? -per  : per;
+
+      let contribution = 0;
+      let modifierType: 'Additive' | 'Multiplicative' = isMultiplicative ? 'Multiplicative' : 'Additive';
+
+      if (isMultiplicative) {
+        // Heuristic: if base is a positive multiplier (0 < base <= 1.5) and per==0, treat it as the multiplier itself.
+        // Else treat base/per as deltas added to 1.0.
+        let multiplier: number;
+        const looksLikeMultiplier = signedPer === 0 && signedBase > 0 && signedBase <= 1.5;
+        if (looksLikeMultiplier) {
+          multiplier = signedBase; // e.g., 0.9 -> -10%[x]
+        } else {
+          const currentDelta = signedBase + signedPer * Math.max(0, rank - 1); // e.g., -0.1
+          multiplier = 1 + currentDelta;                                        // e.g., 0.9
+        }
+        const totalMultiplier = Math.pow(multiplier, Math.max(1, rank));
+        contribution = totalMultiplier;
+      } else {
+        if (per !== 0) {
+          // linear per-level (final value at this rank)
+          contribution = signedBase + signedPer * Math.max(0, rank - 1);
+        } else {
+          // flat repeated per rank
+          contribution = signedBase * rank;
+        }
+      }
+
+      // Accumulate
+      const prev = totals[statKey]?.value ?? (isMultiplicative ? 1 : 0);
+      const newVal = isMultiplicative ? (prev * (contribution || 1)) : (prev + contribution);
+
+      totals[statKey] = {
+        value: newVal,
+        isNegative: isMultiplicative ? (newVal < 1) : (newVal < 0),
+        isPercent: isPercentish,
+        modifierType,
+        nodeData: [
+          ...(totals[statKey]?.nodeData ?? []),
+          { nodeId: String(node.id), rank, contribution }
+        ],
+      };
+    }
+  }
+  return totals;
+}, [nodes]);
+
+
 
   const updateTooltip = (id: any, updated: any) => {
     if (!tooltip || tooltip.id !== id) return;
@@ -321,63 +396,145 @@ const nodesWithHandlers = useMemo(() => {
     );
   }, [nodes]);
 
-  return (
-    <div style={{ width: '100%', height: '100vh', position: 'relative', backgroundColor: '#0e0b16' }}>
-      <StatSummary statTotals={statTotals} />
 
-      
-<div style={{
-  position: 'absolute',
-  top: 25,
-  right: 25,
-  zIndex: 25,
-  backgroundColor: '#1e152a',
-  border: '2px solid #800080',
-  borderRadius: '10px',
-  padding: '12px 16px',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'flex-start',
-  gap: '10px'
-}}>
-  <label htmlFor="statFilter" style={{ color: 'white' }}>Filter by Tag:</label>
-  <select
-    id="statFilter"
-    value={selectedTag}
-    onChange={(e) => setSelectedTag(e.target.value)}
-    style={{
-      padding: '6px 10px',
-      borderRadius: '6px',
-      fontSize: '14px',
-    }}
-  >
-    <option value="">-- Show All --</option>
-    {tagOptions.map((tag) => (
-      <option key={tag} value={tag}>
-        {formatStatName(tag)}
-      </option>
-    ))}
-  </select>
-  <button
-    onClick={resetTree}
-    style={{
-      backgroundColor: '#800080',
-      color: 'white',
-      border: 'none',
-      borderRadius: '6px',
-      padding: '6px 12px',
-      fontWeight: 'bold',
-      cursor: 'pointer',
-    }}
-  >
-    Reset Tree
-  </button>
-</div>
+return (
+  <>
+    {/* Top-right: Filter */}
+    <div style={{
+      position: 'absolute',
+      top: 25,
+      right: 25,
+      zIndex: 25,        
+      backgroundColor: '#0b0b0f',
+      color: '#fff',
+      borderRadius: '10px',
+      padding: '12px 16px',
+      border: '2px solid #800080',
+      boxShadow: '0 0 10px #800080',
+      fontFamily: 'monospace',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+      gap: '10px'
+    }}>
+      <label htmlFor="statFilter" style={{ color: 'white' }}>Filter by Tag:</label>
+      <select
+        id="statFilter"
+        value={selectedTag}
+        onChange={(e) => setSelectedTag(e.target.value)}
+        style={{
+          padding: '6px 10px',
+          borderRadius: '6px',
+          fontSize: '14px',
+        }}
+      >
+        <option value="">-- Show All --</option>
+        {tagOptions.map((tag) => (
+          <option key={tag} value={tag}>
+            {formatStatName(tag)}
+          </option>
+        ))}
+      </select>
+    </div>
+
+{/* Bottom-right: Collapsible Stat Summary with Reset */}
+    <div style={{ position: 'absolute', bottom: 20, right: 20, zIndex: 10 }}>
+      <button
+        onClick={resetTree}
+        style={{
+          marginBottom: '10px',
+          backgroundColor: '#800080',
+          color: 'white',
+          border: 'none',
+          borderRadius: '6px',
+          padding: '6px 12px',
+          fontWeight: 'bold',
+          cursor: 'pointer',
+          width: '100%',
+        }}
+      >
+        Reset Tree
+      </button>
+
+      <button
+        onClick={() => setShowSummary(!showSummary)}
+        style={{
+          marginBottom: '10px',
+          backgroundColor: '#1e152a',
+          color: 'white',
+          border: '1px solid #800080',
+          borderRadius: '6px',
+          padding: '6px 12px',
+          fontSize: 13,
+          cursor: 'pointer',
+          width: '100%',
+        }}
+      >
+        {showSummary ? 'Hide Stat Summary' : 'Show Stat Summary'}
+      </button>
+
+      {showSummary && (
+        <StatSummary statTotals={statTotals} totalRanks={totalRanks} nodes={nodes as any} />
+      )}
+    </div>
+
+    {/* Tree Selector (hidden when using tabs) */}
+    {!hideTreeSelector && <TreeSelector selected={treeUrl} onChange={setTreeUrl} />}
+
+    <div
+      style={{
+        position: 'absolute',
+        top: 40,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 30,
+        backgroundColor: '#0b0b0f',
+        padding: '6px 18px',
+        borderRadius: '6px',
+        color: '#fff',
+        fontSize: 18,
+        fontWeight: 'bold',
+        border: '2px solid #444',
+        boxShadow: '0 0 12px #800080',
+        fontFamily: 'Georgia, serif',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '10px',
+      }}
+    >
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <rect
+          x="4"
+          y="4"
+          width="8"
+          height="8"
+          transform="rotate(45 8 8)"
+          fill="#800080"
+          stroke="#000"
+          strokeWidth="1"
+        />
+      </svg>
+      <span style={{ fontSize: 24 }}>{totalRanks}</span>
+      <span>Total Points Spent</span>
+      <svg width="16" height="16" viewBox="0 0 16 16">
+        <rect
+          x="4"
+          y="4"
+          width="8"
+          height="8"
+          transform="rotate(45 8 8)"
+          fill="#800080"
+          stroke="#000"
+          strokeWidth="1"
+        />
+      </svg>
+    </div>
 
 
-
-      <TreeSelector selected={treeUrl} onChange={setTreeUrl} />
+    {/* Canvas */}
+    <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
       <ReactFlowProvider>
+        <AutoCenter nodes={nodesWithHandlers} />
         <ReactFlow
           nodes={nodesWithHandlers}
           edges={edges}
@@ -385,14 +542,15 @@ const nodesWithHandlers = useMemo(() => {
           onEdgesChange={onEdgesChange}
           nodeTypes={nodeTypes}
           edgeTypes={edgeTypes}
-          fitView
           nodesDraggable={false}
           nodesConnectable={false}
           zoomOnDoubleClick={false}
           onContextMenu={(e) => e.preventDefault()}
+          style={{ backgroundColor: '#0e0e12' }}
         />
         {tooltip && <TooltipCard tooltip={tooltip} />}
       </ReactFlowProvider>
     </div>
+  </>
   );
 }

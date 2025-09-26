@@ -1,0 +1,632 @@
+{
+  "align": {
+    "yorixiamori": {
+      "x": 0,
+      "y": 0,
+      "scale": 1
+    },
+    "iansa": {
+      "x": -800.4,
+      "y": -278.4,
+      "scale": 1.16
+    },
+    "st-sebastian": {
+      "x": -585,
+      "y": -234,
+      "scale": 1.17
+    },
+    "jurupari-the-judge": {
+      "x": 18.685,
+      "y": -12.625,
+      "scale": 1.2
+    },
+    "anthony-of-padua": {
+      "x": -400,
+      "y": -180,
+      "scale": 0.8
+    },
+    "jurupari-the-demon": {
+      "x": -630,
+      "y": -240,
+      "scale": 1
+    },
+    "yeba-belo": {
+      "x": -620.67,
+      "y": -213.69,
+      "scale": 1.02
+    },
+    "onile": {
+      "x": -352,
+      "y": -384,
+      "scale": 0.8
+    },
+    "ceuci-star-mother": {
+      "x": -630,
+      "y": -150,
+      "scale": 1
+    },
+    "guaraci": {
+      "x": -6.38,
+      "y": 49.589999999999996,
+      "scale": 1.16
+    },
+    "curupira": {
+      "x": -560.2,
+      "y": -173.8,
+      "scale": 1
+    },
+    "tupa": {
+      "x": 2.75,
+      "y": -1.437500000000007,
+      "scale": 1.04
+    },
+    "ogum": {
+      "x": 0.1999999999999993,
+      "y": 0,
+      "scale": 1.01
+    },
+    "oxala": {
+      "x": -1.400001919999994,
+      "y": 4.738378879999999,
+      "scale": 1.28
+    },
+    "rita-of-cascia": {
+      "x": -490,
+      "y": -270,
+      "scale": 1
+    },
+    "expeditus": {
+      "x": 8.539999999999996,
+      "y": 19.242999999999995,
+      "scale": 1.16
+    },
+    "oxossi": {
+      "x": 8.74800000000001,
+      "y": 7.176000000000002,
+      "scale": 1.08
+    },
+    "anhanga": {
+      "x": 0,
+      "y": 0,
+      "scale": 1
+    },
+    "logun-ede": {
+      "x": -720,
+      "y": -468,
+      "scale": 1.2
+    },
+    "our-lady-of-fatima": {
+      "x": -448,
+      "y": -160,
+      "scale": 0.8
+    },
+    "st-peter": {
+      "x": -386.09999999999997,
+      "y": -528.8399999999999,
+      "scale": 1.17
+    },
+    "nana": {
+      "x": -438.59999999999997,
+      "y": -348.59999999999997,
+      "scale": 1.2
+    },
+    "akuanduba": {
+      "x": 0,
+      "y": -6,
+      "scale": 1.28
+    },
+    "oxum": {
+      "x": 8.74800000000001,
+      "y": 7.176000000000002,
+      "scale": 1.08
+    },
+    "exu": {
+      "x": -672.8,
+      "y": -266.79999999999995,
+      "scale": 1.16
+    },
+    "st-john": {
+      "x": -713.6999999999999,
+      "y": -332.86499999999995,
+      "scale": 1.17
+    },
+    "yaci-yatere": {
+      "x": -515.0600000000001,
+      "y": -376.84400000000005,
+      "scale": 1.04
+    },
+    "st-paul": {
+      "x": -538.1999999999999,
+      "y": -269.09999999999997,
+      "scale": 1.17
+    },
+    "cosmas-and-damian": {
+      "x": -560.2,
+      "y": -173.8,
+      "scale": 1
+    },
+    "iemanja": {
+      "x": 85.5,
+      "y": 36,
+      "scale": 1.07
+    },
+    "st-anne": {
+      "x": -690.3,
+      "y": -245.7,
+      "scale": 1.17
+    },
+    "st-hedwig": {
+      "x": 0,
+      "y": -16,
+      "scale": 1.17
+    },
+    "oba": {
+      "x": -464.6,
+      "y": -424.2,
+      "scale": 1.01
+    },
+    "iroko": {
+      "x": -556.4,
+      "y": -203.3,
+      "scale": 1.07
+    },
+    "jaci": {
+      "x": -1,
+      "y": -0.4599999999999973,
+      "scale": 1.01
+    },
+    "orunmila": {
+      "x": -472,
+      "y": -224,
+      "scale": 0.8
+    },
+    "st-jude": {
+      "x": -280.79999999999995,
+      "y": -526.5,
+      "scale": 1.17
+    },
+    "xango": {
+      "x": -551.2,
+      "y": -301.6,
+      "scale": 1.04
+    },
+    "the-three-marys": {
+      "x": 2.5,
+      "y": -44.375,
+      "scale": 1.25
+    },
+    "exu-caveira": {
+      "x": -997.5999999999999,
+      "y": -417.59999999999997,
+      "scale": 1.16
+    },
+    "oxumare": {
+      "x": -1.5,
+      "y": 21,
+      "scale": 1
+    },
+    "st-joseph": {
+      "x": -631.8,
+      "y": -269.09999999999997,
+      "scale": 1.17
+    },
+    "boitata": {
+      "x": -575.65,
+      "y": -295.05,
+      "scale": 1
+    },
+    "our-lady-of-aparecida": {
+      "x": -529.2,
+      "y": -183.60000000000002,
+      "scale": 1.08
+    },
+    "our-lady-of-mount-carmel": {
+      "x": -416,
+      "y": -192,
+      "scale": 0.8
+    },
+    "caupe": {
+      "x": 0,
+      "y": 0,
+      "scale": 1
+    },
+    "omolu": {
+      "x": -379,
+      "y": -142.4,
+      "scale": 0.8
+    },
+    "st-george": {
+      "x": 0,
+      "y": -16,
+      "scale": 1.17
+    },
+    "caipora": {
+      "x": -535.25,
+      "y": -229,
+      "scale": 1
+    },
+    "sume": {
+      "x": -362.7,
+      "y": -421.2,
+      "scale": 1.17
+    },
+    "sao-longuinho": {
+      "x": 0,
+      "y": -16,
+      "scale": 1.17
+    },
+    "ossain": {
+      "x": -480,
+      "y": -71.60000000000001,
+      "scale": 0.8
+    }
+  },
+  "map": {
+    "the-three-marys": {
+      "x": 2248,
+      "y": 2028,
+      "scale": 0.76,
+      "rotation": 0
+    },
+    "expeditus": {
+      "x": 2206,
+      "y": 1582,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "tupa": {
+      "x": 2710,
+      "y": 2056,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "ogum": {
+      "x": 1752,
+      "y": 2126,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "yorixiamori": {
+      "x": 1964,
+      "y": 936,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "oxossi": {
+      "x": 2672,
+      "y": 1174,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "jurupari-the-judge": {
+      "x": 1634,
+      "y": 2586,
+      "scale": 0.86,
+      "rotation": 0
+    },
+    "guaraci": {
+      "x": 1188,
+      "y": 2236,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "anhanga": {
+      "x": 1844,
+      "y": 1272,
+      "scale": 0.85,
+      "rotation": 0
+    },
+    "oxum": {
+      "x": 1630,
+      "y": 1688,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "caupe": {
+      "x": 2244,
+      "y": 1192,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "oxumare": {
+      "x": 2626,
+      "y": 1622,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "st-john": {
+      "x": 796,
+      "y": 2642,
+      "scale": 0.69,
+      "rotation": 0
+    },
+    "ossain": {
+      "x": 2694,
+      "y": 600,
+      "scale": 0.79,
+      "rotation": 0
+    },
+    "onile": {
+      "x": 442,
+      "y": 2420,
+      "scale": 0.69,
+      "rotation": 0
+    },
+    "logun-ede": {
+      "x": 2328,
+      "y": 716,
+      "scale": 0.56,
+      "rotation": 0
+    },
+    "st-peter": {
+      "x": 3822,
+      "y": 1774,
+      "scale": 0.49,
+      "rotation": 0
+    },
+    "st-george": {
+      "x": 1058,
+      "y": 2902,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "curupira": {
+      "x": 1780,
+      "y": 564,
+      "scale": 0.7,
+      "rotation": 0
+    },
+    "exu-caveira": {
+      "x": 3972,
+      "y": 1414,
+      "scale": 0.64,
+      "rotation": 0
+    },
+    "our-lady-of-aparecida": {
+      "x": 684,
+      "y": 1922,
+      "scale": 0.42,
+      "rotation": 0
+    },
+    "orunmila": {
+      "x": 3670,
+      "y": 2646,
+      "scale": 0.85,
+      "rotation": 0
+    },
+    "akuanduba": {
+      "x": 2766,
+      "y": 2648,
+      "scale": 0.7,
+      "rotation": 0
+    },
+    "boitata": {
+      "x": 1932,
+      "y": 3010,
+      "scale": 0.82,
+      "rotation": 0
+    },
+    "caipora": {
+      "x": 938,
+      "y": 1100,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "ceuci-star-mother": {
+      "x": 4202,
+      "y": 732,
+      "scale": 0.5,
+      "rotation": 0
+    },
+    "exu": {
+      "x": 1636,
+      "y": 3166,
+      "scale": 0.41,
+      "rotation": 0
+    },
+    "iansa": {
+      "x": 920,
+      "y": 798,
+      "scale": 0.46,
+      "rotation": 0
+    },
+    "jaci": {
+      "x": 3202,
+      "y": 1946,
+      "scale": 0.85,
+      "rotation": 0
+    },
+    "iemanja": {
+      "x": 3228,
+      "y": 2386,
+      "scale": 0.82,
+      "rotation": 0
+    },
+    "st-hedwig": {
+      "x": 3240,
+      "y": 1488,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "iroko": {
+      "x": 3674,
+      "y": 642,
+      "scale": 0.4,
+      "rotation": 0
+    },
+    "jurupari-the-demon": {
+      "x": 3662,
+      "y": 1054,
+      "scale": 0.63,
+      "rotation": 0
+    },
+    "nana": {
+      "x": 2752,
+      "y": 3060,
+      "scale": 0.7,
+      "rotation": 0
+    },
+    "our-lady-of-fatima": {
+      "x": 2240,
+      "y": 3484,
+      "scale": 0.75,
+      "rotation": 0
+    },
+    "our-lady-of-mount-carmel": {
+      "x": 3384,
+      "y": 148,
+      "scale": 0.82,
+      "rotation": 0
+    },
+    "oba": {
+      "x": 442,
+      "y": 946,
+      "scale": 0.74,
+      "rotation": 0
+    },
+    "omolu": {
+      "x": 3108,
+      "y": 624,
+      "scale": 0.79,
+      "rotation": 0
+    },
+    "st-anne": {
+      "x": 3898,
+      "y": 2246,
+      "scale": 0.54,
+      "rotation": 0
+    },
+    "rita-of-cascia": {
+      "x": 1294,
+      "y": 732,
+      "scale": 0.84,
+      "rotation": 0
+    },
+    "sao-longuinho": {
+      "x": 2276,
+      "y": 2810,
+      "scale": 0.68,
+      "rotation": 0
+    },
+    "oxala": {
+      "x": 2254,
+      "y": 2432,
+      "scale": 0.66,
+      "rotation": 0
+    },
+    "anthony-of-padua": {
+      "x": 3158,
+      "y": 2880,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "cosmas-and-damian": {
+      "x": 3022,
+      "y": 228,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "st-joseph": {
+      "x": 1152,
+      "y": 1664,
+      "scale": 0.5,
+      "rotation": 0
+    },
+    "st-jude": {
+      "x": 540,
+      "y": 1380,
+      "scale": 0.7,
+      "rotation": 0
+    },
+    "st-paul": {
+      "x": 2394,
+      "y": 3188,
+      "scale": 0.55,
+      "rotation": 0
+    },
+    "st-sebastian": {
+      "x": 1934,
+      "y": 3592,
+      "scale": 0.41,
+      "rotation": 0
+    },
+    "sume": {
+      "x": 484,
+      "y": 2980,
+      "scale": 0.53,
+      "rotation": 0
+    },
+    "xango": {
+      "x": 1302,
+      "y": 3534,
+      "scale": 0.63,
+      "rotation": 0
+    },
+    "yaci-yatere": {
+      "x": 1422,
+      "y": 1248,
+      "scale": 0.83,
+      "rotation": 0
+    },
+    "yeba-belo": {
+      "x": 3234,
+      "y": 1036,
+      "scale": 0.72,
+      "rotation": 0
+    }
+  },
+  "colors": {
+    "yorixiamori": "#3aad56",
+    "iansa": "#bcb270",
+    "st-sebastian": "#72459a",
+    "jurupari-the-judge": "#b52c40",
+    "anthony-of-padua": "#714398",
+    "yeba-belo": "#1c9573",
+    "onile": "#e5555f",
+    "guaraci": "#ad2a40",
+    "curupira": "#84e7ae",
+    "tupa": "#4f92b9",
+    "ogum": "#d34d5a",
+    "oxala": "#d9b59c",
+    "rita-of-cascia": "#ba9326",
+    "expeditus": "#70c791",
+    "oxossi": "#3bad56",
+    "anhanga": "#6fbe91",
+    "logun-ede": "#84e7ae",
+    "our-lady-of-fatima": "#e5b18d",
+    "st-peter": "#60b7e9",
+    "nana": "#72459a",
+    "akuanduba": "#663399",
+    "oxum": "#be9626",
+    "exu": "#72459a",
+    "st-john": "#e5555f",
+    "yaci-yatere": "#bcb270",
+    "st-paul": "#e5b18d",
+    "cosmas-and-damian": "#3dfbc6",
+    "iemanja": "#35a5cb",
+    "st-anne": "#60b7e9",
+    "st-hedwig": "#35a6cc",
+    "oba": "#bcb270",
+    "iroko": "#1c9573",
+    "jaci": "#53aed6",
+    "orunmila": "#60b7e9",
+    "xango": "#72459a",
+    "st-jude": "a69d62",
+    "the-three-marys": "#d9b59c",
+    "exu-caveira": "#60b7e9",
+    "oxumare": "#3dfbc6",
+    "st-joseph": "#bcb270",
+    "boitata": "#72459a",
+    "our-lady-of-aparecida": "#e5555f",
+    "our-lady-of-mount-carmel": "#1c9573",
+    "caupe": "#3bad56",
+    "omolu": "#3efbc6",
+    "st-george": "#ad2a40",
+    "caipora": "#bcb270",
+    "sume": "#e5555f",
+    "sao-longuinho": "#d9b59c",
+    "ossain": "#84e7ae",
+    "ceuci-star-mother": "#1c9573",
+    "jurupari-the-demon": "#1c9573"
+  }
+}

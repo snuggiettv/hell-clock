@@ -1,0 +1,62 @@
+/* Base diamond */
+.diamond-node {
+  position: relative;
+  width: var(--cn-size, 24px);
+  height: var(--cn-size, 24px);
+  transform: rotate(45deg);
+  border-radius: 3px;
+  transition: transform 140ms ease, opacity 140ms ease;
+  will-change: transform;
+  pointer-events: auto !important;
+}
+
+/* Two plates we can reuse per state:
+   ::before = back plate, ::after = front plate */
+.diamond-node::before,
+.diamond-node::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform: scale(1.00);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ---------------- STATES ---------------- */
+
+/* LOCKED: solid constellation color, no overlays */
+.diamond-node.node-locked {
+  background: var(--cn-tint, #7aa5ff);
+}
+
+/* AVAILABLE:
+   - White face (element background)
+   - Purple overlay IN FRONT, semi-transparent, slightly larger */
+.diamond-node.node-unlocked {
+  background: #ffffff;                           /* white face */
+}
+.diamond-node.node-unlocked::after {
+  background: var(--cn-tint, #7aa5ff);           /* purple overlay (front) */
+  opacity: 0.35;                                  /* ~50% so white shows through */
+  transform: scale(1.5);                         /* a bit larger than face */
+}
+/* nothing behind when available */
+.diamond-node.node-unlocked::before { opacity: 0; }
+
+/* ACTIVATED:
+   - Purple plate BEHIND (solid, bigger)
+   - White face IN FRONT, slightly bigger than normal */
+.diamond-node.node-activated {
+  background: transparent;                        /* face is drawn by ::after instead */
+}
+.diamond-node.node-activated::before {
+  background: var(--cn-tint, #7aa5ff);           /* back plate (purple) */
+  opacity: 1;
+  transform: scale(1.35);                         /* largest layer */
+}
+.diamond-node.node-activated::after {
+  background: #ffffff;                            /* white face in front */
+  opacity: 1;
+  transform: scale(0.8);                         /* face grows a touch */
+}

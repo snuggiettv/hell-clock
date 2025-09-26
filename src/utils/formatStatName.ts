@@ -13,6 +13,8 @@ export const formatStatName = (key: string): string => {
     BaseDamage: 'Base Damage',
     PotionHealingAmount: 'Potion Healing Amount',
     PotionAmount: 'Potion Amount',
+    MaximumSkillLevelIncrementAmount: 'Max Skill Level',
+    RelicInventoryTierIncrementNodeAffixDefinition: 'Max Relic Inventory'
   };
 
   if (customMap[key]) return customMap[key];

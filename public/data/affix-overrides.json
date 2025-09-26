@@ -1,0 +1,31 @@
+
+{
+  "Unlock the Discipline path": "__HIDE__",
+  "Unlock the Fury path": "__HIDE__",
+  "Unlock the Faith path": "__HIDE__",
+
+ 
+  "DisciplineDevotion": "__HIDE__",
+  "FuryDevotion": "__HIDE__",
+  "FaithDevotion": "__HIDE__",
+  "Discipline Devotion +#": "__HIDE__",
+  "Fury Devotion +#": "__HIDE__",
+  "Faith Devotion +#": "__HIDE__",
+
+ 
+  "Icon_AttackSpeed_Base": "+#% Attack Speed",
+  "Increases Attack Speed by #%": "Attack Speed +#%",
+
+  "Critical Chance +#%[+]": "Critical Chance +#%",
+  "Physical Damage +#%[+]": "Physical Damage +#%",
+  "Plague Damage +#%[+]": "Plague Damage +#%",
+  "Evasion +#%[+]": "Evasion +#%",
+  "Move Speed +#%[+]": "Move Speed +#%",
+
+  "Grants a base value of +#% Evasion, which gives you a chance to completely avoid damage from attacks when hit":
+    "Evasion +#% base",
+
+
+  "Killing an enemy has #% chance of granting an Agility Orb. Dealing damage to an Elite enemy has #% chance of granting an Agility Orb.\nYou can have up to # Agility Orbs active. Each Agility orb gives you +#%[+] Move Speed and Attack Speed.\nTaking damage removes one Agility Orb.":
+    "Agility Orbs:\n• On kill: +#% chance\n• On Elite hit: +#% chance\n• Max active: #\nPer orb:\n• +#% Move Speed\n• +#% Attack Speed\n• Lose one when you take damage"
+}
