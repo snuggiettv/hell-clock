@@ -1112,7 +1112,7 @@ const viewport = (
                 position: 'absolute',
                 inset: 0,
                 zIndex: 2,
-                pointerEvents: testModeEnabled ? 'auto' : 'none',
+                pointerEvents: 'auto',
               }}
             >
               {g.nodes.map((n) => {
